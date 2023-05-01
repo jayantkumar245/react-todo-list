@@ -20,6 +20,7 @@ class App extends React.Component {
     this.deleteItem = this.deleteItem.bind(this);
     this.setUpdate = this.setUpdate.bind(this);
   }
+  // add an item to list.
   addItem(e) {
     e.preventDefault();
     const newItem = this.state.currentItem;
@@ -42,12 +43,14 @@ class App extends React.Component {
       }
     });
   }
+  // Delete an item to list.
   deleteItem(key) {
     const filteredItems = this.state.items.filter((item) => item.key !== key);
     this.setState({
       items: filteredItems
     });
   }
+  // Update an item to list.
   setUpdate(text, key) {
     console.log("items:" + this.state.items);
     const items = this.state.items;
